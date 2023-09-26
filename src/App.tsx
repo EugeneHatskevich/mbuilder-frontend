@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductForm from "./components/product/ProductForm";
+import ProductForm from "./components/product/ProductForm/ProductForm";
 import {Route, Routes} from "react-router";
 import {BrowserRouter, Link} from "react-router-dom";
 
