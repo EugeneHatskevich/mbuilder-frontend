@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ProductForm from "./components/product/ProductForm";
+import {Route, Routes} from "react-router";
+import {BrowserRouter, Link} from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter >
+          <div className="App">
+          <nav>
+            <ul>
+              <li>
+                <Link to={'/'}>Home</Link>
+              </li>
+              <li>
+                <Link to={'/login'}>Login</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <Routes>
+            <Route path={'/'} element={<ProductForm/>}></Route>
+            <Route path={'/login'}></Route>
+          </Routes>
+          </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
